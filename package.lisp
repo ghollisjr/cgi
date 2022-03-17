@@ -1,5 +1,7 @@
 (defpackage #:cgi
   (:use :cl
+        :cl-getopt
+        :sbcl-script
         :split-sequence
         :do-urlencode)
   (:export

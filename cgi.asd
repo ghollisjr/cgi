@@ -10,7 +10,7 @@
                #:uiop
                #:cl-fad
                #:cl-ppcre
-               #:trivial-clipboard
+               #:cl-mysql
                #:do-urlencode)
   :components ((:file "package")
                (:file "macros")
