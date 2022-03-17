@@ -8,8 +8,8 @@ the author is to use SBCL to load core files as part of Lisp scripts.
 (Note that make-sbcl-core from sbcl-script must be installed in your
 PATH in order to use the Makefile as written.)
 
-For example, provided you built /path/to/cgi.core with make-sbcl-core
-as in the Makefile, you could have a Lisp file
+For example, provided you built /path/to/cgi.core with make-sbcl-core,
+you could have a Lisp file
 
 webapp.cgi:
 ----------------------------------------------------------------------
@@ -49,5 +49,11 @@ and support loading executable Lisp scripts as library files.  This
 has the same advantages that it has in other languages like Python in
 that you can easily test and reuse scripts without always executing
 them.
+
+Building with "make" is the usual "make; make install", but the
+installation destination is ${HOME}/lib/sbcl-cores out of my own
+personal preference, and there's no configure script provided, so if
+you want a different destination then you will need to edit the
+Makefile.
 
 See examples/ for some example scripts.
