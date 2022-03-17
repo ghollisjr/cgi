@@ -5,6 +5,9 @@ The explicit dependency on SBCL is due to the use of sbcl-script to
 ease script management, as the model of CGI applications envisioned by
 the author is to use SBCL to load core files as part of Lisp scripts.
 
+(Note that make-sbcl-core from sbcl-script must be installed in your
+PATH in order to use the Makefile as written.)
+
 For example, provided you built /path/to/cgi.core with make-sbcl-core
 as in the Makefile, you could have a Lisp file
 
