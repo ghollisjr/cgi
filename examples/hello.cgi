@@ -1,5 +1,5 @@
 #!/usr/bin/env -S sbcl --core ../cgi.core --script
-(when (not (member :script *features*))
+(unless (member :script *features*)
   (ql:quickload "cgi"))
 
 (in-package :cgi)

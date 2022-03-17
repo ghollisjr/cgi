@@ -16,7 +16,7 @@ webapp.cgi:
 #!/usr/bin/env -S sbcl --core /path/to/cgi.core --script
 
 ;; Enable non-script library use without slowing down scripts
-(when (not (member :script *features*))
+(unless (member :script *features*)
   ;; assuming cgi can be found by quicklisp:
   (ql:quickload "cgi"))
 

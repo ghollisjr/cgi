@@ -1,6 +1,6 @@
 #!/usr/bin/env -S sbcl --core ../cgi.core --script
 ;;;; CGI app to echo query requests
-(when (not (member :script *features*))
+(unless (member :script *features*)
   (ql:quickload "cgi"))
 
 (in-package :cgi)
