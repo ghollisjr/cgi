@@ -50,10 +50,13 @@ has the same advantages that it has in other languages like Python in
 that you can easily test and reuse scripts without always executing
 them.
 
-Building with "make" is the usual "make; make install", but the
-installation destination is ${HOME}/lib/sbcl-cores out of my own
-personal preference, and there's no configure script provided, so if
-you want a different destination then you will need to edit the
-Makefile.
+Building with "make" is the usual "make; sudo make install", but the
+installation destination is
+
+/usr/local/lib/sbcl-cores/cgi.core
+
+out of my own personal preference, and there's no configure script
+provided, so if you want a different destination then you will need to
+edit the Makefile.
 
 See examples/ for some example scripts.

@@ -1,4 +1,4 @@
-#!/usr/bin/env -S sbcl --core ../cgi.core --script
+#!/usr/bin/env -S sbcl --core /usr/local/lib/sbcl-cores/cgi.core --script
 (unless (member :script *features*)
   (ql:quickload "cgi"))
 
