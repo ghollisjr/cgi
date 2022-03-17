@@ -1,0 +1,50 @@
+-*- mode: text; -*-
+
+cgi is a library for making CGI applications Common Lisp using SBCL.
+The explicit dependency on SBCL is due to the use of sbcl-script to
+ease script management, as the model of CGI applications envisioned by
+the author is to use SBCL to load core files as part of Lisp scripts.
+
+For example, provided you built /path/to/cgi.core with make-sbcl-core
+as in the Makefile, you could have a Lisp file
+
+webapp.cgi:
+----------------------------------------------------------------------
+#!/usr/bin/env -S sbcl --core /path/to/cgi.core --script
+
+;; Enable non-script library use without slowing down scripts
+(when (not (member :script *features*))
+  ;; assuming cgi can be found by quicklisp:
+  (ql:quickload "cgi"))
+
+(defun somefunc ()
+  ...)
+
+;; Like Python's "if __name__ == '__main__':"
+(when (member :script *features*)
+  (somefunc))
+----------------------------------------------------------------------
+
+that could be placed in your web server's CGI directory to provide a
+CGI web app, and provided that your ~/.sbclrc handles the #!... at the
+start of the file, this script would be both a loadable Lisp library
+file and an executable script.
+
+For reference, your ~/.sbclrc could look like this:
+
+~/.sbclrc:
+----------------------------------------------------------------------
+;; Ignore all #! characters
+(set-dispatch-macro-character
+ #\# #\!
+ (lambda (stream char arg)
+   (declare (ignore char arg))
+   (read-line stream)))
+----------------------------------------------------------------------
+
+and support loading executable Lisp scripts as library files.  This
+has the same advantages that it has in other languages like Python in
+that you can easily test and reuse scripts without always executing
+them.
+
+See examples/ for some example scripts.
