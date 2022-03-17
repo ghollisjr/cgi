@@ -50,13 +50,24 @@ has the same advantages that it has in other languages like Python in
 that you can easily test and reuse scripts without always executing
 them.
 
-Building with "make" is the usual "make; sudo make install", but the
-installation destination is
+Installation is as follows:
 
-/usr/local/lib/sbcl-cores/cgi.core
+1. Edit ~/.config/common-lisp/source-registry.conf.d/projects.conf to
+   include this line:
 
-out of my own personal preference, and there's no configure script
-provided, so if you want a different destination then you will need to
-edit the Makefile.
+~/.config/common-lisp/source-registry.conf.d/projects.conf:
+----------------------------------------------------------------------
+(:directory (:home "local/path/to/cgi"))
+----------------------------------------------------------------------
+
+2. make
+
+3. sudo make install
+
+   The destination is
+
+   /usr/local/lib/sbcl-cores/cgi.core
+
+   Edit Makefile to change this to your liking.
 
 See examples/ for some example scripts.
