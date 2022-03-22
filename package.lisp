@@ -8,6 +8,7 @@
    ;;; utilities
    :split ; alias of split-sequence
    :safe-string
+   :quote-string
    ;;; HTML generation
    :make-html
    ;; void tags
