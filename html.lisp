@@ -71,7 +71,7 @@
                          (if (keywordp term)
                              (let* ((next (progn (pop attrs) (car attrs))))
                                (format s " ~a=~a" (downstring term) next))
-                             (format s "~a " (downstring term))))
+                             (format s " ~a" (downstring term))))
                        (format s ">")
                        (when (close-p tag)
                          (dolist (c content) (printer c))
