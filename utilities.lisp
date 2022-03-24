@@ -12,5 +12,5 @@
   "Wraps string in double-quotes for use in e.g. HTML"
   (concatenate 'string
                "\""
-               string
+               (format nil "~a" string)
                "\""))
