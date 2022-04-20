@@ -10,6 +10,7 @@
    :safe-string
    :quote-string
    ;;; HTML generation
+   :doctype
    :make-html
    ;; void tags
    :img :br :hr :area :base :col :command :embed
