@@ -11,7 +11,8 @@
                #:cl-fad
                #:cl-ppcre
                #:cl-mysql
-               #:do-urlencode)
+               #:do-urlencode
+               #:str)
   :components ((:file "package")
                (:file "macros")
                (:file "utilities")
