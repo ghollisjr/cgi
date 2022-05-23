@@ -12,6 +12,7 @@
                #:cl-ppcre
                #:cl-mysql
                #:do-urlencode
+               #:cl-json
                #:str)
   :components ((:file "package")
                (:file "macros")
