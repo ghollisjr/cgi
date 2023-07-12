@@ -13,7 +13,8 @@
                #:cl-mysql
                #:do-urlencode
                #:cl-json
-               #:str)
+               #:str
+               #:cl-interpol)
   :components ((:file "package")
                (:file "macros")
                (:file "utilities")
